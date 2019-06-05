@@ -1,13 +1,14 @@
 * {
   border-radius: 3px;
-  font-family: "Source Code Pro", monospace;
+  font-family:  'Pirata One', cursive;
+  /* font-family: "Source Code Pro", monospace; */
   /* padding: 9px; */
   /* margin: 18px; */
   box-sizing: border-box;
 }
 
 h1 {
-  color: orangered;
+  color: saddlebrown;
 }
 h3 {
   font-size: 16px;
@@ -15,7 +16,7 @@ h3 {
 }
 
 .bcard {
-  background: cyan;
+  background: cornsilk;
   padding: 16px;
 }
 
@@ -29,17 +30,22 @@ h3 {
 }
 
 #windiv, #losediv, #guessdiv {
-  background-color: darkslategray;
+  background-color: burlywood;
   /* padding: 9px; */
   color: white;
 }
-.container {
+/* .container {
   padding: 0;
-}
+} */
 header {
-  background-color: lightskyblue;
+  background-color: wheat;
   padding: 16px;
-  margin: 16px;
+  margin: 0px;
+  opacity: .8;
+  text-align: center;
+}
+body{
+  background-image: url("../images/wov.png");
 }
 
 footer {
@@ -53,13 +59,24 @@ footer {
 }
 
 #gameboard {
- margin: 32px auto;
+ /* margin: auto; */
+ width: 100%;
+ background-color: cornsilk;
+ padding: 16px;
+ opacity: .8;
 }
 .gametile {
-  background-color: lightpink;
+  background-color: sienna;
+  border: solid 1 px saddlebrown;
   font-family: "Source Code Pro", monospace;
+  color: cornsilk;
   text-align: center;
   font-size: 32px;
   padding-top: 12px;
   height: 72px;
+}
+#whaleimage {
+  text-align: center;
+  padding: 6px;
+  opacity: .5;
 }

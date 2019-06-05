@@ -19,6 +19,8 @@ var gamePoints = 0;
 
 function startGame(gameWord) {
   // this clears the game board
+  //   document.getElementById("gamebuttons").style.display = "none";
+
   document.getElementById("gameboard").innerHTML = "";
 
   var gameWord = wordpool[Math.floor(Math.random() * wordpool.length)];
@@ -42,11 +44,11 @@ function startGame(gameWord) {
 function nomoreGuesses() {
   lossTotal++;
   document.getElementById("Subheader2").textContent =
-    "You have lost Press any key to play again";
+    "You have failed to guess " + gameWord + ". Press Start Game to play again";
   document.getElementById("loss-span").textContent = lossTotal;
-  document.onkeyup = function(event) {
-    startGame();
-  };
+  //   document.onkeyup = function(event) {
+  //     startGame();
+  //   };
 }
 function correctGuess() {
   gamePoints++;
@@ -55,7 +57,7 @@ function correctGuess() {
   if (gamePoints === pointsToWin) {
     winTotal++;
     document.getElementById("Subheader2").textContent =
-      "You have Won! Press any key to play again";
+      "You have guessed " + gameWord +"! Press Start Game to play again";
     document.getElementById("win-span").textContent = winTotal;
     document.onkeyup = function(event) {
       startGame();
@@ -85,9 +87,9 @@ gameWord = startGame();
 var pointsToWin = gameWord.length;
 var guessesRemain = gameWord.length + 5;
 console.log(gameWord);
+// while (guessesRemain > 0) {
 document.onkeyup = function(event) {
   //first we will grab a random word from our word pool to get the game started
-
   // console.log(gameWord.length);
   // this section will take the users entered key and add it to their chose see if it
   var keypressed = event.key;
@@ -116,3 +118,4 @@ document.onkeyup = function(event) {
 
   //first check if that user has pressed that key before.
 };
+// }

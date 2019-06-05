@@ -12,24 +12,53 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css?family=Source+Code+Pro:700&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <!-- pirate font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Pirata+One&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <header class="d-flex">
+    <header>
+      <div class="row">
+        <div class="col-12" id="whaleimage">
+          <img src="./assets/images/whale.png" alt="whale skelton" />
+        </div>
+      </div>
       <div class="row">
         <div class="col-12">
-          <h1>Welcome to the Word Guess Game!</h1>
-          <h2 id="Subheader2">Press Any Key To get started</h2>
+          <h1>Welcome to the Whale Word Guess Game!</h1>
+          <h3>
+            The only Wordgame based on the novel "The Whale", or as it was
+            latter renamed "Moby Dick"
+          </h3>
+          <h2 id="Subheader2">Press Start Game to Play</h2>
+        </div>
+      </div>
+      <div class="row" id="gamebuttons">
+        <div class="col-3">
+          <button
+            onclick="startGame()"
+            type="button"
+            class="btn btn-info"
+            type="submit"
+          >
+            Start Game
+          </button>
         </div>
       </div>
     </header>
-    <div
-      id="gameboard"
-      class="container row d-flex justify-content-between"
-    ></div>
+    <div class="container">
+      <div
+        id="gameboard"
+        class="container row d-flex justify-content-between"
+      ></div>
+    </div>
     <div class="container">
       <div class="row d-flex justify-content-between">
         <div class="bcard col-3">
