@@ -1,17 +1,38 @@
 * {
-  border-radius: 12px;
+  border-radius: 3px;
+  font-family: "Source Code Pro", monospace;
   /* padding: 9px; */
   /* margin: 18px; */
+  box-sizing: border-box;
 }
 
 h1 {
   color: orangered;
 }
-
-.mycard {
-  background: lightcyan;
+h3 {
+  font-size: 16px;
+  padding: 9px;
 }
 
+.bcard {
+  background: cyan;
+  padding: 16px;
+}
+
+.rejecttile {
+  background-color: ivory;
+  border: solid 1px darkgoldenrod;
+  font-size: 12px;
+  margin: 1px;
+  text-align: center;
+  color: darkgoldenrod;
+}
+
+#windiv, #losediv, #guessdiv {
+  background-color: darkslategray;
+  /* padding: 9px; */
+  color: white;
+}
 .container {
   padding: 0;
 }
@@ -31,6 +52,9 @@ footer {
   border-radius: 0;
 }
 
+#gameboard {
+ margin: 32px auto;
+}
 .gametile {
   background-color: lightpink;
   font-family: "Source Code Pro", monospace;

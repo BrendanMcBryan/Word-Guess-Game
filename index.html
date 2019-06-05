@@ -12,57 +12,54 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:700&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-   
     <header class="d-flex">
       <div class="row">
         <div class="col-12">
           <h1>Welcome to the Word Guess Game!</h1>
-          <h2>Press Any Key To get started</h2>
+          <h2 id="Subheader2">Press Any Key To get started</h2>
         </div>
       </div>
     </header>
-    <div id="gameboard" class="container">
+    <div
+      id="gameboard"
+      class="container row d-flex justify-content-between"
+    ></div>
+    <div class="container">
       <div class="row d-flex justify-content-between">
-        <div class="gametile col-1">1</div>
-        <div class="gametile col-1">_</div>
-        <div class="gametile col-1">_</div>
-        <div class="gametile col-1">_</div>
-        <div class="gametile col-1">_</div>
-        <div class="gametile col-1">_</div>
-        <div class="gametile col-1">_</div>
-        <div class="gametile col-1">_</div>
-        <div class="gametile col-1">_</div>
-        <div class="gametile col-1">_</div>
-      </div>
-    </div>
-<div class="container">
-      <div class="row d-flex justify-content-between">
-        <div class="mycard col-4">
-          Here goes the Blanks Word to guess, it changes as guesss are made
+        <div class="bcard col-3">
+          <div class="row d-inline-flex" id="guessdiv">
+            <h3>Guesses Remaining: <span id="guess-span"></span></h3>
+          </div>
         </div>
-        <div class="mycard col-3">
-          Here goes the Letters that have been guessed.
+        <div class="bcard col-5">
+          <div class="row d-inline-flex" id="rejectsBoard"></div>
         </div>
-        <div class="mycard col-3">
-          Here goes the score board.
+        <div class="bcard col-2">
+          <div class="row d-inline-flex" id="windiv">
+            <h3>Wins: <span id="win-span"></span></h3>
+          </div>
+          <div class="row d-flex" id="losediv">
+            <h3>Losses: <span id="loss-span"></span></h3>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<footer class="foot">
-  And this is the Footer.
-</footer>
+
+    <footer class="foot">
+      And this is the Footer.
+    </footer>
+
+    <script src="./assets/javascript/game.js"></script>
     <!-- 
     Choose a theme for your game! In the demo, we picked an 80s theme: 80s questions, 80s sound and an 80s aesthetic. You can choose any subject for your theme, though, so be creative!
-
     Use key events to listen for the letters that your players will type.
-    
-    Display the following on the page:
+      Display the following on the page:
     
     Press any key to get started!
     
@@ -81,6 +78,7 @@
     Word Guess Game Bonuses
     Play a sound or song when the user guesses their word correctly, like in our demo.
     Write some stylish CSS rules to make a design that fits your game's theme.
+
     HARD MODE: Organize your game code as an object, except for the key events to get the letter guessed. This will be a challenge if you haven't coded with JavaScript before, but we encourage anyone already familiar with the language to try this out.
     Save your whole game and its properties in an object.
     Save any of your game's functions as methods, and call them underneath your object declaration using event listeners.
