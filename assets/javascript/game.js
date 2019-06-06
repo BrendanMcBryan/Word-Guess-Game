@@ -68,7 +68,7 @@ function resetgame() {
   // this is to set up to conditions to win
   pointsToWin = gameWord.length;
   guessesRemain = gameWord.length + 5;
-
+// this sets up the tiles for game play
   document.getElementById("guess-span").textContent = guessesRemain;
   for (i = 0; i < gameWord.length; i++) {
     var targetDiv = document.getElementById("gameboard");
@@ -78,10 +78,11 @@ function resetgame() {
     targetDiv.appendChild(tileDiv);
     tileDiv.classList.add("gametile", "col-1");
   }
-  console.log(gameWord);
+  // console.log(gameWord);
+  // Run the game…
   playgame();
 }
-
+//User runs out of guesses
 function nomoreGuesses() {
   lossTotal++;
   document.getElementById("Subheader2").textContent =
@@ -89,6 +90,7 @@ function nomoreGuesses() {
   document.getElementById("loss-span").textContent = lossTotal;
   resetgame();
 }
+// User guessses correctly
 function correctGuess() {
   gamePoints++;
   guessesRemain--;
@@ -104,6 +106,8 @@ function correctGuess() {
     nomoreGuesses();
   }
 }
+
+// Userguess incorrectly
 function incorrectGuess(rejectkey) {
   // console.log("Not used yet");
   guessesRemain--;
@@ -119,16 +123,6 @@ function incorrectGuess(rejectkey) {
   }
 }
 
-//now we are going to set up the game tiles based on how long the word chose is
-
-// this funtion runs wheneevery a key is pressed.
-
-// console.log(gameWord);
-// while (guessesRemain > 0) {
-
+// intially start the game by running "resetgame"
 resetgame();
 
-//first check if that user has pressed that key before.
-
-//;
-//
