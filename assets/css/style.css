@@ -1,6 +1,6 @@
 * {
   border-radius: 3px;
-  font-family:  'Pirata One', cursive;
+  font-family: "Pirata One", cursive;
   /* font-family: "Source Code Pro", monospace; */
   /* padding: 9px; */
   /* margin: 18px; */
@@ -21,53 +21,77 @@ h3 {
 }
 
 .rejecttile {
-  background-color: ivory;
+  background-color: sienna;
   border: solid 1px darkgoldenrod;
   font-size: 12px;
   margin: 1px;
-  text-align: center;
-  color: darkgoldenrod;
+  padding: 3px 16px;
+  text-align: left;
+  color: ivory;
 }
 
-#windiv, #losediv, #guessdiv {
+#windiv,
+#losediv,
+#guessdiv {
   background-color: burlywood;
   /* padding: 9px; */
   color: white;
 }
-/* .container {
-  padding: 0;
-} */
+#mobydiv {
+  background-color: sienna;
+  color: ivory;
+  
+}
+
+a {
+  color: ivory;
+
+}
+a:hover{
+  color: maroon;
+}
 header {
   background-color: wheat;
   padding: 16px;
   margin: 0px;
-  opacity: .8;
+  opacity: 0.8;
   text-align: center;
 }
-body{
+body {
   background-image: url("../images/wov.png");
 }
 
 footer {
-  background-color: linen;
+  background-color: wheat;
   width: 100%;
   position: absolute;
   bottom: 0;
   text-align: center;
+  color: burlywood;
+  opacity: 0.8;
   padding: 9px;
   border-radius: 0;
 }
 
 #gameboard {
- /* margin: auto; */
- width: 100%;
- background-color: cornsilk;
- padding: 16px;
- opacity: .8;
+  /* margin: auto; */
+  margin: 16px;
+  width: 100%;
+  background-color: cornsilk;
+  padding: 16px;
+  opacity: 0.8;
+}
+#bottomboards {
+  margin: 16px;
+  margin-top: 0;
+  width: 100%;
+  background-color: blanchedalmond;
+  padding: 16px;
+  opacity: 0.8;
 }
 .gametile {
   background-color: sienna;
-  border: solid 1 px saddlebrown;
+  border: solid 1px saddlebrown;
   font-family: "Source Code Pro", monospace;
   color: cornsilk;
   text-align: center;
@@ -78,5 +102,14 @@ footer {
 #whaleimage {
   text-align: center;
   padding: 6px;
-  opacity: .5;
+  opacity: 0.5;
+}
+
+.row {
+  margin: 3px;
+}
+
+#Subheader2 {
+  color: firebrick;
+  font-size: 32px;
 }

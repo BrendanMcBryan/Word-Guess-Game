@@ -15,20 +15,61 @@ var winTotal = 0;
 var lossTotal = 0;
 var lettersGuessed = [];
 var gamePoints = 0;
-// var gameWord = "Ahab";
+var gameWord = "test";
+var pointsToWin = 3;
+var guessesRemain = 0;
+var keypressed = "";
 
-function startGame(gameWord) {
+function playgame() {
+  lettersGuessed = [];
+  document.onkeyup = function(event) {
+    //first we will grab a random word from our word pool to get the game started
+    // console.log(gameWord.length);
+    // this section will take the users entered key and add it to their chose see if it
+    keypressed = event.key;
+
+    if (event.keyCode >= 65 && event.keyCode <= 90) {
+      if (lettersGuessed.includes(keypressed)) {
+        // console.log("you've tried that one");
+      } else {
+        // add to letters guessed
+        lettersGuessed.push(keypressed);
+        // Check if its in the Game Wrod
+
+        console.log(gameWord);
+        if (gameWord.includes(keypressed)) {
+          // console.log("Its in the Word!");
+          for (i = 0; i < gameWord.length; i++) {
+            if (keypressed === gameWord[i]) {
+              // console.log("it's in space " + i);
+              var tileSwitch = document.getElementById("tile-" + i);
+              tileSwitch.textContent = keypressed;
+              correctGuess();
+            }
+          }
+        } else {
+          incorrectGuess(keypressed);
+        }
+      }
+    }
+    // console.log(keypressed);
+  };
+}
+
+function resetgame() {
   // this clears the game board
-  //   document.getElementById("gamebuttons").style.display = "none";
+  gamePoints = 0;
+  lettersGuessed = [];
 
   document.getElementById("gameboard").innerHTML = "";
+  document.getElementById("rejectsBoard").innerHTML = "";
 
-  var gameWord = wordpool[Math.floor(Math.random() * wordpool.length)];
+  gameWord = wordpool[Math.floor(Math.random() * wordpool.length)];
   // this is to set up to conditions to win
-  var gamePoints = 0;
+  pointsToWin = gameWord.length;
+  guessesRemain = gameWord.length + 5;
 
   document.getElementById("guess-span").textContent = guessesRemain;
-  var lettersGuessed = [];
   for (i = 0; i < gameWord.length; i++) {
     var targetDiv = document.getElementById("gameboard");
     var tileDiv = document.createElement("div");
@@ -38,17 +79,15 @@ function startGame(gameWord) {
     tileDiv.classList.add("gametile", "col-1");
   }
   console.log(gameWord);
-  return gameWord;
+  playgame();
 }
 
 function nomoreGuesses() {
   lossTotal++;
   document.getElementById("Subheader2").textContent =
-    "You have failed to guess " + gameWord + ". Press Start Game to play again";
+    "Oh no you have run out of guesses! " + gameWord + " was the answer.";
   document.getElementById("loss-span").textContent = lossTotal;
-  //   document.onkeyup = function(event) {
-  //     startGame();
-  //   };
+  resetgame();
 }
 function correctGuess() {
   gamePoints++;
@@ -57,15 +96,16 @@ function correctGuess() {
   if (gamePoints === pointsToWin) {
     winTotal++;
     document.getElementById("Subheader2").textContent =
-      "You have guessed " + gameWord +"! Press Start Game to play again";
+      "Ahoy! " + gameWord + " is correct.";
     document.getElementById("win-span").textContent = winTotal;
-    document.onkeyup = function(event) {
-      startGame();
-    };
+    resetgame();
+  }
+  if (guessesRemain == 0) {
+    nomoreGuesses();
   }
 }
 function incorrectGuess(rejectkey) {
-  console.log("Not used yet");
+  // console.log("Not used yet");
   guessesRemain--;
   document.getElementById("guess-span").textContent = guessesRemain;
   // add to chosen tiles
@@ -73,8 +113,8 @@ function incorrectGuess(rejectkey) {
   var rejectTile = document.createElement("div");
   rejectTile.textContent = rejectkey;
   RejectSpot.appendChild(rejectTile);
-  rejectTile.classList.add("rejecttile", "col-2");
-  if (guessesRemain === 0) {
+  rejectTile.classList.add("rejecttile");
+  if (guessesRemain == 0) {
     nomoreGuesses();
   }
 }
@@ -83,39 +123,12 @@ function incorrectGuess(rejectkey) {
 
 // this funtion runs wheneevery a key is pressed.
 
-gameWord = startGame();
-var pointsToWin = gameWord.length;
-var guessesRemain = gameWord.length + 5;
-console.log(gameWord);
+// console.log(gameWord);
 // while (guessesRemain > 0) {
-document.onkeyup = function(event) {
-  //first we will grab a random word from our word pool to get the game started
-  // console.log(gameWord.length);
-  // this section will take the users entered key and add it to their chose see if it
-  var keypressed = event.key;
 
-  if (lettersGuessed.includes(keypressed)) {
-    console.log("you've tried that one");
-  } else {
-    // add to letters guessed
-    lettersGuessed.push(keypressed);
-    // Check if its in the Game Wrod
-    if (gameWord.includes(keypressed)) {
-      // console.log("Its in the Word!");
-      for (i = 0; i < gameWord.length; i++) {
-        if (keypressed === gameWord[i]) {
-          console.log("it's in space " + i);
-          var tileSwitch = document.getElementById("tile-" + i);
-          tileSwitch.textContent = keypressed;
-          correctGuess();
-        }
-      }
-    } else {
-      incorrectGuess(keypressed);
-    }
-  }
-  console.log(keypressed);
+resetgame();
 
-  //first check if that user has pressed that key before.
-};
-// }
+//first check if that user has pressed that key before.
+
+//;
+//

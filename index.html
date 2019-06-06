@@ -34,46 +34,38 @@
         <div class="col-12">
           <h1>Welcome to the Whale Word Guess Game!</h1>
           <h3>
-            The only Wordgame based on the novel "The Whale", or as it was
+            The only Word game based on the novel "The Whale", or as it was
             latter renamed "Moby Dick"
           </h3>
-          <h2 id="Subheader2">Press Start Game to Play</h2>
-        </div>
-      </div>
-      <div class="row" id="gamebuttons">
-        <div class="col-3">
-          <button
-            onclick="startGame()"
-            type="button"
-            class="btn btn-info"
-            type="submit"
-          >
-            Start Game
-          </button>
+          <h2 id="Subheader2"></h2>
+          <h2>Start Guessing!</h2>
         </div>
       </div>
     </header>
     <div class="container">
       <div
         id="gameboard"
-        class="container row d-flex justify-content-between"
+        class="row d-inline-flex justify-content-between"
       ></div>
     </div>
     <div class="container">
-      <div class="row d-flex justify-content-between">
-        <div class="bcard col-3">
-          <div class="row d-inline-flex" id="guessdiv">
-            <h3>Guesses Remaining: <span id="guess-span"></span></h3>
+      <div id="bottomboards" class="row d-flex justify-content-between">
+        <div class="bcard col-2">
+          <div class="row d -flex" id="guessdiv">
+            <h3>Guesses: <span id="guess-span"></span></h3>
+          </div>
+          <div id="mobydiv" class="row d -flex" >
+            <h3><a href="http://www.gutenberg.org/files/2701/2701-h/2701-h.htm" target="_blank" >The Whale</a></h3>
           </div>
         </div>
-        <div class="bcard col-5">
+        <div class="bcard col-7">
           <div class="row d-inline-flex" id="rejectsBoard"></div>
         </div>
         <div class="bcard col-2">
-          <div class="row d-inline-flex" id="windiv">
+          <div class="row d-flex" id="windiv">
             <h3>Wins: <span id="win-span"></span></h3>
           </div>
-          <div class="row d-flex" id="losediv">
+          <div class="row d -flex" id="losediv">
             <h3>Losses: <span id="loss-span"></span></h3>
           </div>
         </div>
@@ -81,7 +73,7 @@
     </div>
 
     <footer class="foot">
-      And this is the Footer.
+      To produce a mighty book, you must choose a mighty theme.
     </footer>
 
     <script src="./assets/javascript/game.js"></script>
